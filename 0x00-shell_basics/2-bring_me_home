@@ -1,0 +1,6 @@
+#!/bin/sh
+echo from:
+pwd
+echo to home:
+cd
+pwd

@@ -1,0 +1,4 @@
+$ mv /tmp/betty /tmp/holberton/
+$ ls /tmp/holberton/
+betty
+$
