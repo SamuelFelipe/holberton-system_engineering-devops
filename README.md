@@ -1,2 +1,1 @@
-# holberton-system_engineering-devops
-### Samuel Correa
+### basic commands in linux terminal

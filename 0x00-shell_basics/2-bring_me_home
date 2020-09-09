@@ -1,6 +1,2 @@
-#!/bin/sh
-echo from:
-pwd
-echo to home:
+#!/bin/bash
 cd
-pwd
