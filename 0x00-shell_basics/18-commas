@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -amvFX
+ls -mpa
