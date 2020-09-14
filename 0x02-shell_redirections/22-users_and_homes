@@ -1,2 +1,2 @@
 #!/bin/bash
-sort -Rr
+sort -R
