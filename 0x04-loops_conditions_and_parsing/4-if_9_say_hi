@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# print 10 times 'Holberton School' but in the 9th iteration Hi on a new line
+
+i=0
+
+while [ $i -lt 10 ]
+do
+	echo "Holberton School"
+	i=$(( i+1 ))
+	if [ $i -eq 9 ]; then
+		echo "Hi"
+	fi
+done
