@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# A super usefull infinite loop
+
+trap 'no' 15
+
+no()
+{
+	echo "I am invincible!!!"
+}
+
+while true;
+do
+	echo "To infinity and beyond"
+	sleep 2
+done

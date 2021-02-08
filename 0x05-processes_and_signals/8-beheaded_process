@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# A super usefull function to stop an infinite loop
+
+kill -9 $( pgrep -f 7-highlander)
