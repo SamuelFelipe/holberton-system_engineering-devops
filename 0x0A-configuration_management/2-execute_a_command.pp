@@ -1,5 +1,5 @@
 # kill a program
 exec {
-  command => 'pkill -x killmenow',
+  command => 'pkill killmenow',
   path    => '/usr/bin'
 }
