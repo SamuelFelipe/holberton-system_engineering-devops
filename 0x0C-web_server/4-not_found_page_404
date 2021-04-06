@@ -7,4 +7,5 @@ ALREADY_IN=$( grep "error_page" /etc/nginx/sites-available/default)
 if [[ -z $ALREADY_IN ]]; then
   echo "Ceci n'est pas une page" | sudo tee /var/www/html/page404.html
   sudo sed -i "s/root \/var\/www\/html;/root \/var\/www\/html;$new_string/" /etc/nginx/sites-available/default
+  sudo service nginx restart
 fi
