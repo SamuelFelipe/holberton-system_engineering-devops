@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # make a redirection
 
+apt-get update
+apt-get -y install nginx
+
 new_string="\n\n\tlocation \/redirect_me {\n\t\treturn 301 https:\/\/www.youtube.com\/watch?v=XlVOJg23QZ0&t=1s;\n\t}\n"
 ALREADY_IN=$( grep "redirect_me" /etc/nginx/sites-available/default)
 
