@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 # make create and link the 404 error page
 
+apt-get update
+apt-get -y install nginx
+
 new_string="\n\n\terror_page 404 \/page404.html;\n\tlocation = \/page404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}\n"
 ALREADY_IN=$( grep "error_page" /etc/nginx/sites-available/default)
 
 if [[ -z $ALREADY_IN ]]; then
   echo "Ceci n'est pas une page" | sudo tee /var/www/html/page404.html
   sudo sed -i "s/root \/var\/www\/html;/root \/var\/www\/html;$new_string/" /etc/nginx/sites-available/default
+  sudo service nginx restart
 fi
