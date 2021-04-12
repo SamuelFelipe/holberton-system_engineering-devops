@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Configure Nginx so that its HTTP response contains a custom header
+
+new_header="\tadd_header X-Served-By $HOSTNAME;"
+
+already_exist=$( grep "X-Served-By" /etc/nginx/sites-available/default )
+
+if [[ -z $already_exist ]]; then
+  sudo sed -i "s/root \/var\/www\/html;/root \/var\/www\/html;\n\n$new_header\n/" /etc/nginx/sites-available/default
+fi
