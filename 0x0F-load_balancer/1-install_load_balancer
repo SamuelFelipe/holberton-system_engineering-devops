@@ -2,10 +2,9 @@
 # Down load and configure haproxy
 
 sudo apt-get -y update
-sudo apt-get -y upgrade
 sudo apt-get -y install haproxy
 
-echo '
+echo "
 frontend wilf.com
         bind wilf:80
         default_backend web_servers
@@ -14,7 +13,6 @@ backend web_servers
         balance roundrobin
         server 2354-web-01 104.196.191.64
         server 2354-web-02 35.185.77.2
-' >> /etc/haproxy/haproxy.cfg
+" >> /etc/haproxy/haproxy.cfg
 
-sudo service haproxy reload
 sudo service haproxy restart
