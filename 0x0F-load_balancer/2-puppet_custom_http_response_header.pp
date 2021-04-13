@@ -3,7 +3,8 @@
 exec {
   command => 'sudo apt-get update
   sudo apt-get upgrade
-  sudo apt-get install nginx
+  sudo apt-get install nginx'
+  provider => shell
 }
 
 file_line { 'Config'
