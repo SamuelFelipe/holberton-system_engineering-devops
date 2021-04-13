@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Down load and configure haproxy
 
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install haproxy
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install haproxy
 
 echo '
 frontend wilf.com
