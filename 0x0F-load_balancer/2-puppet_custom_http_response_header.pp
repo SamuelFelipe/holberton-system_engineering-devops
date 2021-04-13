@@ -1,4 +1,5 @@
--- configure the server to response with a new header
+#!/usr/bin/env bash
+# configure the server to response with a new header
 file_line { 'Config'
   ensure => 'present'
   path => '/etc/nginx/sites-available/default'
