@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Script to fix a bug in the server
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx restart
