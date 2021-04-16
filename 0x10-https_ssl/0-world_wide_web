@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# list the type of record and ip
 
 on () {
   echo "$sub $inf" | awk '{ print "The subdomain " $1 " is a " $5 " record and points to " $6 }'
