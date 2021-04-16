@@ -13,6 +13,7 @@ then
     on
   done
 else
+  sub=$2
   inf=$( dig "$2.$1" | grep -A1 ";; ANSWER" | tail -n 1 )
   on
 fi
