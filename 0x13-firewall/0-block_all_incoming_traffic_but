@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Install and configure the ufw firewall
+
+
+sudo apt-get update
+
+sudo apt-get -y install ufw
+
+echo y | sudo ufw enable
+
+sudo ufw default deny incoming
+
+sudo ufw allow ssh # port 22 by default
+
+sudo ufw allow 443 # https
+
+sudo ufw allow 80 # http
