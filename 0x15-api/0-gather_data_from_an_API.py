@@ -15,7 +15,7 @@ if __name__ == '__main__':
     user_url = 'https://jsonplaceholder.typicode.com/users/{}'
     task_url = 'https://jsonplaceholder.typicode.com/users/{}/todos/'
     user_id = argv[1]
-    out = 'Employee {} is done with task({}/{}):{}'
+    out = 'Employee {} is done with tasks({}/{}):{}'
 
     responce_user = requests.get(user_url.format(user_id))
     responce_task = requests.get(task_url.format(user_id))
