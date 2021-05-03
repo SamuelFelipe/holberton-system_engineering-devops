@@ -7,16 +7,15 @@ and show the response
 '''
 
 if __name__ == '__main__':
+
     from sys import argv
     import json
     import requests
-
 
     user_url = 'https://jsonplaceholder.typicode.com/users/{}'
     task_url = 'https://jsonplaceholder.typicode.com/users/{}/todos/'
     user_id = argv[1]
     out = 'Employee {} is done with task({}/{}):{}'
-
 
     responce_user = requests.get(user_url.format(user_id))
     responce_task = requests.get(task_url.format(user_id))
@@ -30,6 +29,5 @@ if __name__ == '__main__':
         if i['completed']:
             completed += 1
             titles += '\n\t ' + i['title']
-
 
     print(out.format(info_user['name'], completed, len(info_task), titles))
