@@ -25,9 +25,12 @@ if __name__ == '__main__':
     info_user = json.loads(responce_user.text)
     titles = ''
 
-    for i in info_task:
-        if i['completed']:
-            completed += 1
-            titles += '\n\t ' + i['title']
+    try:
+        for i in info_task:
+            if i['completed']:
+                completed += 1
+                titles += '\n\t ' + i['title']
 
-    print(out.format(info_user['name'], completed, len(info_task), titles))
+        print(out.format(info_user['name'], completed, len(info_task), titles))
+    except:
+        pass
