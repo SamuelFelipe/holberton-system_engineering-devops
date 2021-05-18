@@ -1,11 +1,14 @@
 #!/usr/bin/python3
 
-'''Use the reddit api'''
+'''
+Use the reddit Api to get information.
+'''
 import requests
 
 
 def top_ten(subreddit):
-    '''return the top ten hot post'''
+    '''Return the top 10 post in a subreddit'''
+
     url = 'https://reddit.com/r/{}/hot.json'.format(subreddit)
     response = requests.get(url=url)
 
