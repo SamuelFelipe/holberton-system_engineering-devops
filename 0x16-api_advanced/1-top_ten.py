@@ -6,7 +6,7 @@ import requests
 
 def top_ten(subreddit):
     '''return the top ten hot post'''
-    url = 'https://reddit.com/r/{}/hot.json?limit=10'.format(subreddit)
+    url = 'https://reddit.com/r/{}/hot.json'.format(subreddit)
     response = requests.get(url=url)
 
     if response.status_code != 200:
