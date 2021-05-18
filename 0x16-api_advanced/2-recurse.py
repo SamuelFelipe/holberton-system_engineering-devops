@@ -5,9 +5,9 @@ import requests
 
 
 def recurse(subreddit, hot_list=[], after=''):
-    '''return the top ten hot post'''
+    '''Return the title of all hot posts in a subreddit'''
 
-    if after == None:
+    if after is None:
         return hot_list
 
     url = 'https://reddit.com/r/{}/hot.json?after={}'.format(subreddit, after)
