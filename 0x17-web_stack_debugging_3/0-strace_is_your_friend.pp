@@ -1,4 +1,4 @@
 exec { 'change':
-  path    => '/usr/local/bin',
+  path    => '/usr/bin/:/bin/',
   command => 'sed -i s/phpp/php/g /var/www/html/wp-settings.php'
 }
