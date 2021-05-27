@@ -73,7 +73,7 @@ server {
 		# First attempt to serve request as file, then
 		# as directory, then fall back to displaying a 404.
 		alias /home/ubuntu/AirBnB_clone_v4/web_dynamic;
-                proxy_pass http://127.0.0.1:5003;
+                proxy_pass http://127.0.0.1:5003/2-hbnb;
 		try_files $uri $uri/ =404;
 	}
 
