@@ -1,4 +1,4 @@
-# configuration with puppet
+# Correct conf
 file_line { 'Authentication off':
   ensure => 'present',
   path   => '/etc/ssh/ssh_config',

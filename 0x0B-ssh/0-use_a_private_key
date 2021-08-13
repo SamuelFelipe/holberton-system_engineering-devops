@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# conect to the server with the key pair
+# conect to the server
 
-ssh -i ~/.ssh/holberton ubuntu@104.196.191.64
+ssh -i ~/.ssh/holberton ubuntu@34.138.89.43
