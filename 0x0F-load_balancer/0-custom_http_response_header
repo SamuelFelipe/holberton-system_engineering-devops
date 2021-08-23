@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# Configures the server
+
+sudo apt-get update
+sudo apt-get -y install nginx
+echo "Holberton School" | sudo tee /var/www/html/index.html
+
+main_line="\/root \/var\/www\/html;"
+
+new_string="\n\n\terror_page 404 \/page404.html;\n\tlocation = \/page404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}\n"
+ALREADY_IN=$( grep "error_page" /etc/nginx/sites-available/default)
+
+if [[ -z $ALREADY_IN ]]; then
+  echo "Ceci n'est pas une page" | sudo tee /var/www/html/page404.html
+  sudo sed -i "s/$main_line/&$new_string/" /etc/nginx/sites-available/default
+  sudo service nginx restart
+fi
+
+new_string="\n\n\terror_page 404 \/page404.html;\n\tlocation = \/page404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}\n"
+exist=$( grep "error_page" /etc/nginx/sites-available/default)
+
+if [[ -z $exist ]]; then
+  echo "Ceci n'est pas une page" | sudo tee /var/www/html/page404.html
+  sudo sed -i "s/$main_line/&$new_string/" /etc/nginx/sites-available/default
+fi
+
+new_header="\n\n\tadd_header X-Served-By $HOSTNAME;\n"
+exist=$( grep "X-Served-By" /etc/nginx/sites-available/default )
+if [[ -z $exist ]]; then
+  sudo sed -i "s/$main_line/&$new_header/" /etc/nginx/sites-available/default
+fi
+
+sudo service nginx restart

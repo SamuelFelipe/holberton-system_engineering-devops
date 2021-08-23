@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Download and configure the proxy
+
+sudo apt-get -y update
+sudo apt-get -y install haproxy
+
+echo "
+frontend wilf.com
+        bind *:80
+        default_backend web_servers
+
+backend web_servers
+        balance roundrobin
+        server 2354-web-01 104.196.191.64:80
+        server 2354-web-02 35.185.77.2:80
+" >> /etc/haproxy/haproxy.cfg
+
+sudo service haproxy restart
