@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Change a user
+
+useradd -s /sbin/nologin "$1"
+chsh -s /bin/bash "$1"
+su -c whoami "$1"
