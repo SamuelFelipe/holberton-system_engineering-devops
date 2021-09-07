@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Make a backup
+
+password=$1
+filename=$(date +%d-%m-%Y.tar.gz)
+
+mysqldump --all-databases --single-transaction --quick --lock-tables=false > backup.sql -uroot -p$password
+tar -zcvf $filename ./backup.sql
