@@ -30,5 +30,5 @@ if __name__ == '__main__':
                 titles += '\n\t ' + i['title']
 
         print(out.format(info_user['name'], completed, len(info_task), titles))
-    except Exception:
+    except:
         pass
