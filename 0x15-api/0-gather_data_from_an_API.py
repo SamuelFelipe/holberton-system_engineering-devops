@@ -6,9 +6,9 @@ Print an api responce
 
 if __name__ == '__main__':
 
-    from sys import argv
     import json
     import requests
+    from sys import argv
 
     user_url = 'https://jsonplaceholder.typicode.com/users/{}'
     task_url = 'https://jsonplaceholder.typicode.com/users/{}/todos/'
