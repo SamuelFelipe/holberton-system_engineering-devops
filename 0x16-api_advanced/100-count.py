@@ -21,17 +21,18 @@ def count_words(subreddit, word_list, after='', count={}):
     for post in children:
         for word in word_list:
             if count.get(word):
-                count[word] += len(post['data']['title']
-                                   .casefold()
-                                   .split((word + ' ').casefold())) - 1
+                count[word.casefold()] += len(post['data']['title']
+                                              .casefold()
+                                              .split((word + ' ')
+                                              .casefold())) - 1
             else:
-                count[word] = len(post['data']['title']
-                                  .casefold().split((word + ' ')
-                                  .casefold())) - 1
+                count[word.casefold()] = len(post['data']['title']
+                                             .casefold().split((word + ' ')
+                                             .casefold())) - 1
 
     result = count_words(subreddit, word_list, inf['data']['after'], count)
     if result:
-        for val in sorted(result.items(), key = lambda item: item[0]):
+        for val in sorted(result.items(), key=lambda item: item[0]):
             print('{}: {}'.format(*val))
         result = None
     return result
