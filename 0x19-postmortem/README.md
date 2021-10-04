@@ -72,12 +72,13 @@ learn all about you and other people, it’s the better way to take.
 
 ## Example
 
-### Date: 09-28-2021 00:00
+### Date: 09-28-2021 00:00 (UTC)
 
 ### What happened?
 
 The server stops working and raises error 500 after devops enginers change the
 wordpress settings. The databases and other servers still working.
+all the website goes down
 
 ### Why did it happen?
 
