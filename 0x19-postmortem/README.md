@@ -69,3 +69,35 @@ a problem. But if you really want to make your project or your company better,
 work faster, learn and improve your skills, you need to learn about the errors
 and success of yours and other people. Take a postmortem as an opportunity to
 learn all about you and other people, it’s the better way to take.
+
+## Example
+
+### Date: 09-28-2021 00:00
+
+### What happened?
+
+The server stops working and raises error 500 after devops enginers change the
+wordpress settings. The databases and other servers still working.
+
+### Why did it happen?
+
+After get notice of the problem and what was done before the page goes down
+we decide to use 'strace' trying to find whath rises the problem, fortunally
+we find the problem in the '/var/www/html/wp-settings.php' file, also the output
+of 'strace', provides first line who is raising a problem and points out the
+problem. with that output we conclude that the problem is a sintax one.
+
+### How did we respond and recover?
+
+We don’t find any problem with php or mysql so we decide to use the
+'strace' command to read the all the applications logs, we read the output
+until we find the first point of failure, there we find all the information
+about what is the error cause. After change the sintax error and restart the
+service the problem get solved.
+
+### How can we prevent similar unexpected issues from occurring again?
+
+Any body can missclick a key and makes a sintax error, But for that reason,
+we encorage you to uses a code editor who notifies you about that kind of
+errors.
+configure the server with a text editor with a languaje server.
